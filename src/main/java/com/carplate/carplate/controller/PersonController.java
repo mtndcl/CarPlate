@@ -10,21 +10,33 @@ import java.util.Date;
 
 @RestController
 @RequestMapping(path = "api/user")
-public class UserController {
+public class PersonController {
 
 
     private  final PersonService personService;
 
     @Autowired
-    public UserController(PersonService personService) {
+    public PersonController(PersonService personService) {
         this.personService = personService;
     }
 
 
     @PostMapping("/adduser")
-    public  void  addUser(@RequestBody Person person){
+    public  void   addUser(@RequestBody Person person){
 
         personService.addNewPerson(person);
+    }
+
+    @PostMapping("delete/{id}")
+    public  void  deletePerson(@PathVariable ("id") Long id){
+
+        personService.deletePerson(id);
+
+    }
+    @PostMapping("update/{id}")
+    public  void  updatePerson(@RequestBody Person person){
+
+        personService.updatePerson(person);
 
     }
 
