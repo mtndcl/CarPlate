@@ -7,6 +7,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <div className="w-1/2 mx-auto">
+      <App />
+    </div>
   </React.StrictMode>
 );
