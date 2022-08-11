@@ -1,0 +1,2 @@
+INSERT INTO person (id, username, password,created_date) VALUES (1, 'ahmet', 'MyPassord','2001-07-13');
+INSERT INTO person (id, username, password,created_date) VALUES (2, 'Metin', 'Thpassword','2001-07-13');
