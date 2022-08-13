@@ -1,10 +1,22 @@
 import Navbar from "../components/Navbar";
+import SearchBar from "../components/SearchBar";
+import PlateCard from "../components/PlateCard";
 
 export default function Home() {
   return (
     <div>
       <Navbar />
+
+      <div className="flex justify-center">
+        <SearchBar/>
+      </div>
+
       <h1 className="mb-4">Home Page</h1>
+
+      <div  className="">
+        <PlateCard/>
+
+      </div>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue
         pellentesque magna ac mattis. Etiam sed convallis odio. Ut eu mauris
