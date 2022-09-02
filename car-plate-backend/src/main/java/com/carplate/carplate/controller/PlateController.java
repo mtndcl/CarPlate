@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/plate")
@@ -52,6 +53,12 @@ public class PlateController {
         Plate plate =new Plate();
 
         return plate ;
+
+    }
+
+    @GetMapping("/allPlate")
+    public List<Plate> getAllPlate(){
+        return   plateService.getAllPlate();
 
     }
 
