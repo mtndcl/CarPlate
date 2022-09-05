@@ -24,7 +24,7 @@ export default function Home() {
 
       <h1 className="mb-4">Home Page</h1>
 
-      <div className="flex gap-4">
+      <div className="flex gap-4 border-2 border-red-500 flex-wrap justify-around p-4	" >
         {data?.map((plate) => (
           <PlateCard plateNumber={plate.plateNumber} key={plate.id} />
         ))}
