@@ -3,15 +3,27 @@ import SearchBar from "../components/SearchBar";
 import PlateCard from "../components/PlateCard";
 import { useState, useEffect } from "react";
 
+export type Comment={
+    id:number,
+    text:string,
+    star:number;
+}
+export  type Plate={
+    id:number,
+    plateNumber:string,
+    commentList:Comment[];
+
+}
+
 export default function Home() {
-  const [data, setData] = useState<any[]>();
+  const [plates, setPlates] = useState<Plate[]>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch(`http://localhost:8080/api/plate/allPlate`)
       .then((res) => res.json())
-      .then((data) => setData(data))
+      .then((data) => setPlates(data))
       .catch((error) => console.log("An error occurred in Home page", error));
   }, []);
   return (
@@ -24,9 +36,9 @@ export default function Home() {
 
       <h1 className="mb-4">Home Page</h1>
 
-      <div className="flex gap-4 border-2 border-red-500 flex-wrap justify-around p-4	" >
-        {data?.map((plate) => (
-          <PlateCard plateNumber={plate.plateNumber} key={plate.id} />
+      <div className="grid grid-cols-3" >
+        {plates?.map((plate) => (
+          <PlateCard plate={plate} key={plate.id}  />
         ))}
       </div>
     </div>

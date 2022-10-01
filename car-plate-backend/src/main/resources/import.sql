@@ -7,3 +7,9 @@ INSERT INTO plate (id, plate_number, star,star_count) VALUES (4, '11EGK79', 3,1)
 INSERT INTO plate (id, plate_number, star,star_count) VALUES (5, '34EGK79',2,1);
 INSERT INTO plate (id, plate_number, star,star_count) VALUES (6, '42YG79', 3,1);
 INSERT INTO plate (id, plate_number, star,star_count) VALUES (7, '06EGR78', 3,1);
+INSERT INTO plate (id, plate_number, star,star_count) VALUES (8, '81RTG34', 8,2);
+INSERT INTO comment (id, text, star) VALUES (1, 'Ehliyeti  kasaptan almış olsa gerek', 1);
+INSERT INTO comment (id, text, star) VALUES (2, 'Ne desem ki', 1);
+
+INSERT INTO plate_comment_list ( plate_id,comment_list_id) VALUES (1, 1);
+INSERT INTO plate_comment_list ( plate_id,comment_list_id) VALUES (1, 2);
